@@ -2,27 +2,109 @@ img { width:100%;height:auto; }
 
 section {
   width:100%;
-  min-height:20vh;
+  min-height:50vh;
 }
 
 #AboveTheFold{
-  background: url('../Material/pult.jpg') no-repeat 50% 50%;
-  background-size: cover;
-  position:relative;
-  height:40vh;
+  background:url('../Material/pult.jpg') -25px -300px;
+  background-size: calc(100% + 50px);
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:-1000;
+  max-height:40vh;
+  text-align: center;
+}
 
+#Profile {
   .logo {
-    position:relative;
     img {
-      position:absolute;
+
       top:50px;
       border-radius: 50%;
     }
   }
 
   .About {
-    position:absolute;
-    bottom:0;
+
     padding: 16px 44px;
   }
+}
+
+
+
+/*
+  Based from this article from Divya Manian -
+  http://nimbupani.com/using-background-clip-for-text-with-css-fallback.html
+*/
+
+
+.wrapper {
+    text-align: center;
+}
+
+/* Clip text element */
+.clip-text {
+    font-size: 6em;
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    margin: .25em;
+    padding: .5em .75em;
+    text-align: center;
+    /* Color fallback */
+    color: #fff;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.clip-text:before,
+.clip-text:after {
+    position: absolute;
+    content: '';
+}
+
+/* Background */
+.clip-text:before {
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+}
+
+/* Text Background (black zone) */
+.clip-text:after {
+    position: absolute;
+    z-index: -1;
+    top: .125em;
+    right: .125em;
+    bottom: .125em;
+    left: .125em;
+    background-color: #000;
+}
+
+/* Change the background position to display letter when the black zone isn't here */
+.clip-text--no-textzone:before {
+    background-position: -.65em 0;
+}
+
+.clip-text--no-textzone:after {
+    content: none;
+}
+
+/* Use Background-size cover for photo background and no-repeat background */
+.clip-text--cover,
+.clip-text--cover:before {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+            background-size: cover;
+  background-position: 50% 50%;
+}
+
+.clip-text_fifteen {
+    background-image: url('../Material/pult.jpg');
 }

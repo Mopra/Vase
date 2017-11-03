@@ -19,25 +19,25 @@
     <main>
 
     <section class="scrollspy section" id="AboveTheFold">
-        <div class="container">
-          <div class="row">
-            <div class="col s12 m4 l3">
-              <div class="logo">
-                <img src="Material/logo_profile.jpg">
-              </div>
-            </div>
-            <div class="col s12 m8 l9">
-              <div class="About grey lighten-5 z-depth-4">
-                <h1>DJ Vase</h1>
-                <p>Med mere end 20 års erfaring som mobil og club dj, er DJ Vase det perfekte valg når musikken til din fest skal sidde lige i skabet.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+
     </section>
 
     <section class="scrollspy section" id="Profile">
-
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m4 l3">
+            <div class="logo">
+              <img src="Material/logo_profile.jpg" class="z-depth-4">
+            </div>
+          </div>
+          <div class="col s12 m8 l9">
+            <div class="About grey lighten-5 z-depth-4">
+              <h1>DJ Vase</h1>
+              <p>Med mere end 20 års erfaring som mobil og club dj, er DJ Vase det perfekte valg når musikken til din fest skal sidde lige i skabet.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="scrollspy section" id="Portfolio">
@@ -45,7 +45,11 @@
     </section>
 
     <section class="scrollspy section" id="Contact">
+      <div class="wrapper">
 
+        <div class="clip-text clip-text_fifteen clip-text--no-textzone">JINTOS</div>
+
+        </div>
     </section>
 
     </main>
@@ -56,5 +60,20 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+    var movementStrength = 25;
+    var height = movementStrength / $(window).height();
+    var width = movementStrength / $(window).width();
+    $("#AboveTheFold").mousemove(function(e){
+              var pageX = e.pageX - ($(window).width() / 2);
+              var pageY = e.pageY - ($(window).height() / 2);
+              var newvalueX = width * pageX * -1 - 25;
+              var newvalueY = height * pageY * -1 - 300;
+              $('#AboveTheFold').css("background-position", newvalueX+"px     "+newvalueY+"px");
+    });
+    });
+    </script>
   </body>
 </html>
