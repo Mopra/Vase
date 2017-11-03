@@ -7,18 +7,25 @@ section {
 
 #AboveTheFold {
   background:url('../Material/pult.jpg') no-repeat -25px -300px;
-  background-size: calc(100% + 50px);
+  background-size: cover;
   position:fixed;
   top:0;
-  width:100%;
+  width:125%;
   z-index:0;
   height:60vh;
+
+  @media (max-width:992px) {
+    width:250%;
+  }
+  @media (max-width:600px) {
+    width:400%;
+  }
 
   #gradient {
     width: 100%;
     height: 800px;
     padding: 0px;
-    margin: -20px 0 0 0;
+    margin: -40px 0 0 0;
     opacity: 0.3;
   }
 }
