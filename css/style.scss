@@ -13,6 +13,14 @@ section {
   width:100%;
   z-index:0;
   height:60vh;
+
+  #gradient {
+    width: 100%;
+    height: 800px;
+    padding: 0px;
+    margin: -20px 0 0 0;
+    opacity: 0.3;
+  }
 }
 
 #Profile {
@@ -34,6 +42,9 @@ section {
       padding:16px 22px;
       margin-top:50px;
       color:#fff;
+text-shadow: horizontal-offset vertical-offset blur color;
+
+text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
     }
   }
 }
