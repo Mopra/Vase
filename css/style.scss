@@ -2,7 +2,8 @@ img { width:100%;height:auto; }
 
 section {
   width:100%;
-  min-height:50vh;
+  min-height:10vh;
+  background-color:#fff;
 }
 
 #AboveTheFold {
@@ -12,8 +13,11 @@ section {
   top:0;
   width:125%;
   z-index:0;
-  height:60vh;
+  height:40vh;
 
+  @media (min-width:1920px) {
+    width:105%;
+  }
   @media (max-width:992px) {
     width:250%;
   }
@@ -32,7 +36,7 @@ section {
 
 #Profile {
   position:relative;
-  margin-top:60vh;
+  margin-top:40vh;
   width:100%;
   background-color:#fff;
   z-index:1;
@@ -42,16 +46,25 @@ section {
     .logo {
       position:relative;
       z-index:5;
+
+      img {
+        border-radius: 50%;
+      }
     }
     .info {
       position:relative;
       z-index:4;
       padding:16px 22px;
-      margin-top:50px;
+      margin-top:80px;
       color:#fff;
-text-shadow: horizontal-offset vertical-offset blur color;
-
-text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+      text-shadow: horizontal-offset vertical-offset blur color;
+      text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
     }
   }
+}
+
+#Portfolio {
+  position:relative;
+  background-color:#fff;
+
 }
