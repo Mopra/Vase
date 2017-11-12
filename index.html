@@ -13,47 +13,48 @@
 
   <body>
 
-    <header>
-
-    </header>
-    <main>
-
-    <section class="scrollspy section" id="AboveTheFold">
-      <div id="gradient"></div>
-    </section>
-
-    <section class="scrollspy section" id="Profile">
-      <div class="container">
-        <div class="row About">
-          <div class="col s12 m12 l4">
-            <div class="logo">
-              <img src="Material/logo_profile.jpg" class="z-depth-4">
-            </div>
-          </div>
-          <div class="col s12 m12 l8">
-            <div class="info">
-              <p class="flow-text">
-                Med mere end 20 års erfaring som mobil og club dj, er DJ Vase det perfekte valg når musikken til din fest skal sidde lige i skabet.
-              </p>
-            </div>
-          </div>
+    <ul id="slide-out" class="side-nav fixed">
+      <li><div class="user-view">
+        <div class="background">
+          <img src="Material/DJ-Vase.jpg">
         </div>
-      </div>
-    </section>
+        <a href="#!user"><img class="circle" src="Material/Steffan-Vase.jpg"></a>
+        <a href="#!name"><span class="white-text name">Steffan Vase</span></a>
+        <a href="#!email"><span class="white-text email">mail@djvase.dk - 29623810</span></a>
+      </div></li>
+      <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+      <li><a href="#!">Second Link</a></li>
+      <li><div class="divider"></div></li>
+      <li><a class="subheader">Subheader</a></li>
+      <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 
-    <section class="scrollspy section" id="Portfolio">
+
+    <header class="scrollspy section" id="AboveTheFold">
+      <div id="gradient"></div>
+    </header>
+
+    <main>
+    <section class="scrollspy section" id="">
       <div class="container">
         <div class="row">
-          <h3 class="center-align">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit consequat blandit. Morbi vestibulum ultrices nisi, sit amet posuere erat. Etiam nec nunc ipsum."
-          </h3>
+          asdf
         </div>
       </div>
     </section>
 
-    <section class="scrollspy section" id="Contact">
-      <div class="wrapper">
+    <section class="scrollspy section" id="">
+      <div class="container">
+        <div class="row">
+asdfr
+        </div>
+      </div>
+    </section>
 
+    <section class="scrollspy section" id="">
+      <div class="container">
+asdf
       </div>
     </section>
 
@@ -68,7 +69,18 @@
 
     <script type="text/javascript">
     $(document).ready(function() {
-    var movementStrength = 25;
+
+      $('.button-collapse').sideNav({
+          menuWidth: 300, // Default is 300
+          edge: 'left', // Choose the horizontal origin
+          closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+          draggable: true, // Choose whether you can drag to open on touch screens,
+          onOpen: function(el) { /* Do Stuff* / }, // A function to be called when sideNav is opened
+          onClose: function(el) { /* Do Stuff*/ }, // A function to be called when sideNav is closed
+        }
+      );
+
+    var movementStrength = 15;
     var height = movementStrength / $(window).height();
     var width = movementStrength / $(window).width();
     $("#AboveTheFold").mousemove(function(e){
@@ -79,8 +91,6 @@
               $('#AboveTheFold').css("background-position", newvalueX+"px     "+newvalueY+"px");
     });
     });
-
-
 
     var colors = new Array(
       [62,35,255],
@@ -99,7 +109,7 @@
     var colorIndices = [0,1,2,3];
 
     //transition speed
-    var gradientSpeed = 0.002;
+    var gradientSpeed = 0.004;
 
     function updateGradient()
     {
